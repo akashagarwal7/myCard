@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @passport.number %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @passport.user %>
+</p>
+
+<%= link_to 'Edit', edit_passport_path(@passport) %> |
+<%= link_to 'Back', passports_path %>
