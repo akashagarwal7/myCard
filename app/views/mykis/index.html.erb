@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mykis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mykis.each do |myki| %>
+      <tr>
+        <td><%= myki.number %></td>
+        <td><%= myki.user.id %></td>
+        <td><%= link_to 'Show', myki %></td>
+        <td><%= link_to 'Edit', edit_myki_path(myki) %></td>
+        <td><%= link_to 'Destroy', myki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Myki', new_myki_path %>

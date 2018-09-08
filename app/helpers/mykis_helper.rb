@@ -1,0 +1,2 @@
+module MykisHelper
+end

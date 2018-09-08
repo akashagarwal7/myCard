@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @myki.number %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @myki.user %>
+</p>
+
+<%= link_to 'Edit', edit_myki_path(@myki) %> |
+<%= link_to 'Back', mykis_path %>
