@@ -5,11 +5,8 @@ Rails.application.routes.draw do
   resources :mykis
   resources :passports
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'users#index'
 
   get 'info', to: 'apis#info'
-
-  get 'receiver/home', to: 'receiver#home'
-
+  root 'receiver/home', to: 'receiver#home'
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
