@@ -1,3 +1,16 @@
 <h1>Demo Receiver</h1>
+<p>Let's assume that the receiver type is predefined, for instance a Myki card reader. We also assume that the receiver already has the user ID fetched from the person's device when they tap it on the receiver.</p>
+<h3>Enter details:</h3>
+<form action="../info">
+Select receiver type:
+  <select name="p">
+    <option value="M">Myki</option>
+    <option value="P">Passport</option>
+  </select>
+  <br><br>
+  Enter User ID: <input type="text" name="id" value="1">
+  <br><br>
+  <input type="submit">
+</form>
 
-<Button>Tap a user</Button>
+
