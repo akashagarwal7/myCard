@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :data_types, path: 'types'
   resources :mykis
   resources :passports
   resources :users
