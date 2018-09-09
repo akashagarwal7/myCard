@@ -1,16 +1,41 @@
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+
 <h1>Demo Receiver</h1>
 <p>Let's assume that the receiver type is predefined, for instance a Myki card reader. We also assume that the receiver already has the user ID fetched from the person's device when they tap it on the receiver.</p>
 <h3>Enter details:</h3>
-<form action="../info">
+<form name="infoForm">
 Select receiver type:
-  <select name="p">
+  <select name="p" id="potato">
     <option value="M">Myki</option>
     <option value="P">Passport</option>
   </select>
   <br><br>
-  Enter User ID: <input type="text" name="id" value="1">
+  Enter User ID: <input type="text" name="id" id="user_id" value="1">
   <br><br>
-  <input type="submit">
+  <input type="button" onclick="mySubmit()" value="Submit" name="button">
 </form>
+<div name="inst" id="inst" ></div>
 
+<script>
+  function mySubmit() {
+    var e = document.getElementById("potato");
+    var type = e.options[e.selectedIndex].value;
+    var id = document.getElementById("user_id").value;
 
+    console.log(type);
+    console.log(id);
+
+    var my_data = {
+      "p": type,
+      "id": id };
+
+    $.ajax({url: "../info", data: my_data, success: function(result) {
+      $("#inst").html("<p><b>Received number is:</b> " + result[0]['number'] + "<br>This number can then be used by the receiver to contact the concerned authority, like it normally would.</p>");
+    }, error: function (result) {
+      console.log('faaaaaaaaaaaaaail');
+    }});
+  }
+</script>
